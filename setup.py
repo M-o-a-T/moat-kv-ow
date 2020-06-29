@@ -11,10 +11,10 @@ setup(
     author="Matthias Urlichs",
     author_email="matthias@urlichs.de",
     license="MIT -or- Apache License 2.0",
-    packages=find_packages(),
+    packages=["distkv_ext.owfs"],
     setup_requires=["setuptools_scm", "pytest-runner", "trustme >= 0.5"],
     install_requires=[
-        "distkv >= 0.10.1",
+        "distkv >= 0.30.1",
         "asyncowfs >= 0.10.2",
     ],
     tests_require=["trustme >= 0.5", "pytest", "flake8 >= 3.7"],

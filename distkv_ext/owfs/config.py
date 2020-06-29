@@ -1,11 +1,7 @@
-from distkv.util import attrdict
+from distkv.util import attrdict, Path
 
 CFG = attrdict(
-        prefix=('.distkv','onewire'),
-        server=[{}],
-        server_default=attrdict(
-            host="localhost",
-            port=4304,
-        ),
+        prefix=Path('.distkv','onewire'),
+        port=4304,
     )
 
