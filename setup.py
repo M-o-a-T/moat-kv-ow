@@ -14,7 +14,7 @@ setup(
     packages=["distkv_ext.owfs"],
     setup_requires=["setuptools_scm", "pytest-runner", "trustme >= 0.5"],
     install_requires=[
-        "distkv >= 0.30.1",
+        "distkv >= 0.20.1",
         "asyncowfs >= 0.10.2",
     ],
     tests_require=["trustme >= 0.5", "pytest", "flake8 >= 3.7"],
