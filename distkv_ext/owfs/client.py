@@ -1,15 +1,15 @@
 # command line interface
 
 import asyncclick as click
-from distkv.util import yprint, attrdict, NotGiven, P, Path, as_service, data_get
-from distkv.command import node_attr
+from distkv.data import data_get, node_attr
+from distkv.util import yprint, attrdict, NotGiven, P, Path, as_service
 
 import logging
 
 logger = logging.getLogger(__name__)
 
 
-@main.group(short_help="Manage 1wire devices.")  # pylint: disable=undefined-variable
+@click.group(short_help="Manage 1wire devices.")
 async def cli():
     """
     List Onewire devices, modify device handling …
@@ -22,8 +22,7 @@ async def cli():
 @click.option("-f", "--family", help="Device family to modify.")
 @click.pass_obj
 async def list_(obj, device, family):
-    """Emit the current state as a YAML file.
-    """
+    """Emit the current state as a YAML file."""
     if device is not None and family is not None:
         raise click.UsageError("Family and device code can't both be used")
     if family:
@@ -208,8 +207,7 @@ async def server_(obj, name, host, port, delete):
 @click.pass_obj
 @click.argument("server", nargs=-1)
 async def monitor(obj, server):
-    """Stand-alone task to monitor one or more OWFS servers.
-    """
+    """Stand-alone task to monitor one or more OWFS servers."""
     from distkv_ext.owfs.task import task
 
     async with as_service(obj) as srv:

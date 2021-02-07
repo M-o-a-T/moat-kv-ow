@@ -1,4 +1,4 @@
-Source: distowfs
+Source: distkv-owfs
 Maintainer: Matthias Urlichs <matthias@urlichs.de>
 Section: python
 Priority: optional
