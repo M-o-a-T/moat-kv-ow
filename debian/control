@@ -3,7 +3,7 @@ Maintainer: Matthias Urlichs <matthias@urlichs.de>
 Section: python
 Priority: optional
 Build-Depends: dh-python, python3-setuptools, python3-all, debhelper (>= 13),
-  distkv,
+  distkv (>= 0.50),
   owserver,
   python3-asyncowfs (>= 0.12.0),
 Standards-Version: 3.9.6
@@ -12,7 +12,7 @@ Homepage: https://github.com/smurfix/distowfs
 Package: distkv-owfs
 Architecture: all
 Depends: ${misc:Depends}, ${python3:Depends},
-  distkv,
+  distkv (>= 0.50),
   python3-asyncowfs (>= 0.12.0),
 Replaces: python3-distowfs
 Conflicts: python3-distowfs
