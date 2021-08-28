@@ -1,3 +1,9 @@
+distkv-owfs (0.6.2-1) unstable; urgency=medium
+
+  * Merge
+
+ -- Matthias Urlichs <matthias@urlichs.de>  Sat, 28 Aug 2021 14:04:01 +0200
+
 distkv-owfs (0.6.0-1) unstable; urgency=medium
 
   * Merge
