@@ -1,6 +1,7 @@
-distkv-owfs (0.8.0-1) unstable; urgency=medium
+moat-kv-ow (0.8.0-1) unstable; urgency=medium
 
   * Merge
+  * Rename
 
  -- Matthias Urlichs <matthias@urlichs.de>  Wed, 15 Nov 2023 13:58:41 +0100
 
