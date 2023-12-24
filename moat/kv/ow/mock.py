@@ -22,10 +22,10 @@ async def server(client, tree={}, options={}, evt=None):  # pylint: disable=dang
                 pass
 
         addr = listener.extra(anyio.abc.SocketAttribute.raw_socket).getsockname()
-        await tg.spawn(may_close)
+        tg.start_soon(may_close)
 
         await client.set(
-            client._cfg.owfs.prefix + ("server", "127.0.0.1"),
+            client._cfg.kv.owfs.prefix + ("server", "127.0.0.1"),
             value=dict(server=dict(host="127.0.0.1", port=addr[1])),
         )
 

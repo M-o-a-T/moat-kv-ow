@@ -12,7 +12,7 @@ from moat.kv.mock.mqtt import stdtest
 from moat.util import attrdict, Path, P, load_ext
 from moat.kv.data import data_get
 
-owfs_mock = load_ext("moat.kv.ow", "mock")
+owfs_mock = load_ext("moat.kv.ow.mock")
 
 import logging
 
@@ -43,9 +43,9 @@ async def test_alarm(mock_clock):
     my_tree = deepcopy(basic_tree)
     dt = my_tree["bus.0"]["10.345678.90"]
     async with stdtest(test_0={"init": 125}, n=1, tocks=200) as st, st.client(0) as client:
-        evt = anyio.create_event()
+        evt = anyio.Event()
         obj = attrdict(client=client, meta=0, stdout=sys.stdout)
-        await st.tg.spawn(partial(owfs_mock.server, client, tree=my_tree, evt=evt))
+        st.tg.start_soon(partial(owfs_mock.server, client, tree=my_tree, evt=evt))
         await evt.wait()
         assert dt["foo"]["bar"] == 123
         await st.run("owfs attr -d 10.345678.90 -i 5 temperature test.foo.temp")
