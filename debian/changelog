@@ -1,3 +1,9 @@
+moat-kv-ow (0.9.4-1) unstable; urgency=medium
+
+  * Merge
+
+ -- Matthias Urlichs <matthias@urlichs.de>  Tue, 05 Mar 2024 19:32:20 +0100
+
 moat-kv-ow (0.9.3-1) unstable; urgency=medium
 
   * Merge
